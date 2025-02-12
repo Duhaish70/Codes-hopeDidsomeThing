@@ -1,0 +1,94 @@
+import java.util.LinkedList;
+
+class pleaseWork {
+
+    static class Node {
+        private Node E;
+        private Node next;
+        private Node prev;
+        public int data;
+
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+
+
+        public Node getNext() {
+            return next;
+        }
+
+        public Node getPrev() {
+            return prev;
+        }
+
+        public Node getE() {
+            return E;
+        }
+    }
+
+
+        public static class listing {
+            Node head;
+
+            public boolean isEmpty() {
+                return head == null;
+            }
+
+            public void addNode(int data) {
+                Node newNode = new Node(data);
+
+                if (isEmpty()) {
+                    head = newNode;
+                } else {
+                    Node current = head;
+                    while (current.next != null) {
+                        current = current.next;
+                    }
+                    current.next = newNode;
+                }
+            }
+
+            public void Error() {
+                System.out.println("Error 261");
+            }
+
+            // just thought to put ms for fun
+            public void printAll() {
+                long milliseconds = System.currentTimeMillis();
+                
+                Node current = head;
+                while (current != null) {
+                    System.out.print(current.data + " -> ");
+                    System.out.println(milliseconds + "ms");
+                    current = current.next;
+
+
+                }
+                Error();
+            }
+        }
+
+            public static void main(String[] args) {
+                listing list = new listing();
+
+                System.out.println("Is the list empty? " + list.isEmpty()); // if Output: true
+
+                list.addNode(1);
+                list.addNode(2);
+                list.addNode(3);
+
+                System.out.println("Is the list empty? " + list.isEmpty()); // if Output: false
+
+                list.printAll();
+            }
+        }
+
+
+
+
+
+
+
